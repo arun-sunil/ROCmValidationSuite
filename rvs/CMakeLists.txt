@@ -163,8 +163,6 @@ if(BUILD_FILE_REORG_BACKWARD_COMPATIBILITY)
   #Create the softlink rvs/rvs->../bin/rvs in install path for backward compatibility
   install(CODE "
     set(EXE_FILE rvs)
-    set(BIN_LINK_DIR \${CMAKE_PACKAGING_INSTALL_PREFIX}/rvs)
-    file(MAKE_DIRECTORY \${BIN_LINK_DIR})
     execute_process(COMMAND ln -sf ../${CMAKE_INSTALL_BINDIR}/\${EXE_FILE} rvs/\${EXE_FILE})
   ")
   #Install the soft link to package
